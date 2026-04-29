@@ -3,15 +3,11 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Propuesta — Recepción IA | Consultorio Digital</title>
+<title>Propuesta - Recepcion IA | Consultorio Digital</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Barlow:wght@400;500;600;700;800&family=Barlow+Condensed:wght@600;700;800&display=swap" rel="stylesheet">
 <style>
-@font-face{
-  font-family:'Norwester';
-  src:url('norwester.woff2') format('woff2');
-  font-display:swap;
-}
+@font-face{font-family:'Norwester';src:url('norwester.otf') format('opentype');font-display:swap}
 :root{
   --marino:#0D1B3E;--azul:#1A4B8C;--azul-med:#2176C7;--cyan:#00AEEF;
   --azul-claro:#E6F4FC;--azul-borde:#93C5E8;--naranja:#E07B2A;--naranja-c:#FEF3E8;
@@ -26,32 +22,27 @@ html{scroll-behavior:smooth}
 body{font-family:var(--sans);font-size:15px;line-height:1.7;color:var(--gris-tx);background:var(--gris-bg);transition:margin-right .3s}
 body.panel-open{margin-right:var(--panel-w)}
 .container{max-width:820px;margin:0 auto;padding:0 28px}
-
 .site-header{background:var(--marino);position:relative;overflow:hidden}
 .header-topbar{background:var(--cyan);height:5px}
-.site-header::before{content:'';position:absolute;top:-80px;right:-80px;width:300px;height:300px;border-radius:50%;border:60px solid rgba(0,174,239,.06);pointer-events:none}
 .header-inner{display:grid;grid-template-columns:auto 1fr;gap:40px;align-items:center;padding:36px 40px;position:relative;z-index:1}
 .header-logo img{width:200px;display:block;filter:drop-shadow(0 2px 12px rgba(0,174,239,.3))}
 .logo-ph{width:200px;height:56px;background:rgba(255,255,255,.15);border-radius:8px;display:none;align-items:center;justify-content:center;color:rgba(255,255,255,.7);font-size:13px;font-weight:700;letter-spacing:.06em}
 .badge-plan{display:inline-flex;align-items:center;gap:6px;background:var(--naranja);color:#fff;font-size:11px;font-weight:700;padding:5px 14px;border-radius:20px;letter-spacing:.1em;text-transform:uppercase;margin-bottom:14px}
-.badge-plan::before{content:'★';font-size:10px}
-.header-title{font-family:var(--condensed);font-size:34px;font-weight:800;color:#fff;line-height:1.15;letter-spacing:-.3px;margin-bottom:10px}
+.badge-plan::before{content:'';font-size:10px}
+.header-title{font-family:var(--condensed);font-size:34px;font-weight:800;color:#fff;line-height:1.15;margin-bottom:10px}
 .header-title .cyan{color:var(--cyan)}
 .header-desc{font-size:14px;color:var(--azul-borde);line-height:1.6}
 .header-strip{background:rgba(255,255,255,.05);border-top:1px solid rgba(255,255,255,.08);padding:14px 40px;display:flex;align-items:center;gap:28px;flex-wrap:wrap}
 .strip-item{display:flex;align-items:center;gap:8px;font-size:12px;color:var(--azul-borde);font-weight:500}
 .strip-dot{width:7px;height:7px;border-radius:50%;background:var(--cyan);flex-shrink:0}
-
 .section{padding:52px 0}
 .section+.section{border-top:1px solid var(--gris-line)}
 .section-label{font-size:10px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--naranja);margin-bottom:8px}
 .section-title{font-family:var(--condensed);font-size:30px;font-weight:800;color:var(--marino);line-height:1.1;margin-bottom:8px}
 .section-intro{color:var(--gris-sub);font-size:14px;margin-bottom:28px}
-
 .problema-list{list-style:none;display:grid;gap:10px}
 .problema-list li{display:flex;align-items:flex-start;gap:14px;background:var(--blanco);border:1px solid var(--gris-line);border-left:4px solid var(--naranja);border-radius:8px;padding:14px 18px;font-size:14px;line-height:1.55}
 .problema-list li .num{font-family:var(--condensed);font-size:22px;font-weight:800;color:var(--naranja);line-height:1;flex-shrink:0;margin-top:1px}
-
 .flujo{display:grid;grid-template-columns:repeat(3,1fr);gap:3px;border-radius:14px;overflow:hidden;border:1px solid var(--gris-line);margin-bottom:24px}
 .flujo-paso{padding:28px 20px}
 .flujo-paso:nth-child(1){background:var(--azul-claro)}
@@ -67,7 +58,6 @@ body.panel-open{margin-right:var(--panel-w)}
 .flujo-paso:nth-child(2) .flujo-desc{color:var(--azul-borde)}
 .nota-box{font-size:14px;color:var(--gris-sub);line-height:1.7;background:var(--blanco);border:1px solid var(--gris-line);border-left:4px solid var(--cyan);border-radius:8px;padding:14px 18px}
 .nota-box strong{color:var(--gris-tx)}
-
 .precios-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:16px;margin-bottom:14px}
 .precio-card{background:var(--blanco);border:1.5px solid var(--azul-borde);border-top:4px solid var(--azul-med);border-radius:12px;padding:24px;text-align:center}
 .precio-card.nar{border-top-color:var(--naranja)}
@@ -77,12 +67,10 @@ body.panel-open{margin-right:var(--panel-w)}
 .precio-nota{font-size:11.5px;color:var(--gris-sub);line-height:1.5;margin-top:8px}
 .herr-nota{background:var(--azul-claro);border:1px solid var(--azul-borde);border-radius:8px;padding:14px 18px;font-size:12.5px;color:var(--gris-sub);line-height:1.6}
 .herr-nota strong{color:var(--gris-tx);font-weight:600}
-
 .incluye-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px}
 .check-item{display:flex;align-items:flex-start;gap:10px;font-size:13.5px;line-height:1.5;background:var(--blanco);border:1px solid var(--gris-line);border-radius:8px;padding:12px 14px}
 .check-icon{width:20px;height:20px;background:var(--verde);border-radius:50%;display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:1px}
 .check-icon::after{content:'';width:5px;height:9px;border:2px solid #fff;border-top:none;border-left:none;transform:rotate(45deg) translateY(-1px)}
-
 .tabla-wrap{overflow-x:auto;border-radius:12px;border:1px solid var(--gris-line)}
 table{width:100%;border-collapse:collapse;font-size:13px}
 thead th{background:var(--marino);color:#fff;font-weight:700;padding:13px 14px;text-align:center;font-size:12px;letter-spacing:.04em;text-transform:uppercase}
@@ -99,7 +87,6 @@ tbody tr:last-child td{border-bottom:none}
 .ok{color:var(--verde);font-size:17px;font-weight:700}
 .no{color:#CBD5E0;font-size:15px}
 .auto{color:var(--cyan);font-size:11px;font-weight:700;letter-spacing:.04em}
-
 .tool-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px}
 .tool-card{background:var(--blanco);border:1px solid var(--gris-line);border-radius:10px;padding:16px 18px;display:flex;gap:14px;align-items:flex-start}
 .tool-ico{width:36px;height:36px;border-radius:8px;background:var(--azul-claro);display:flex;align-items:center;justify-content:center;flex-shrink:0}
@@ -107,7 +94,6 @@ tbody tr:last-child td{border-bottom:none}
 .tool-name{font-weight:700;font-size:13px;color:var(--marino);margin-bottom:2px}
 .tool-cost{font-size:14px;color:var(--azul-med);font-weight:700;font-family:var(--condensed)}
 .tool-who{font-size:11px;color:var(--gris-sub);line-height:1.4}
-
 .pasos{display:grid;gap:8px}
 .paso{display:grid;grid-template-columns:80px 1fr;border-radius:10px;overflow:hidden;border:1px solid var(--gris-line)}
 .paso-dia{background:var(--azul-med);color:#fff;display:flex;align-items:center;justify-content:center;font-weight:800;font-size:12px;text-align:center;padding:14px 8px;line-height:1.3;font-family:var(--condensed)}
@@ -115,7 +101,6 @@ tbody tr:last-child td{border-bottom:none}
 .paso-body{background:var(--blanco);padding:14px 20px}
 .paso-titulo{font-weight:700;font-size:14px;color:var(--marino);margin-bottom:4px}
 .paso-desc{font-size:13px;color:var(--gris-sub);line-height:1.55}
-
 .oferta{background:var(--naranja-c);border:2px solid var(--naranja);border-radius:14px;padding:32px 36px;position:relative;overflow:hidden}
 .oferta::before{content:'OFERTA LIMITADA';position:absolute;top:18px;right:-30px;background:var(--naranja);color:#fff;font-size:9px;font-weight:800;letter-spacing:.12em;padding:5px 38px;transform:rotate(45deg)}
 .oferta-titulo{font-family:var(--condensed);font-size:26px;font-weight:800;color:var(--naranja);margin-bottom:6px}
@@ -125,58 +110,45 @@ tbody tr:last-child td{border-bottom:none}
 .oferta-ahorro{display:inline-block;background:var(--naranja);color:#fff;font-family:var(--sans);font-size:12px;font-weight:700;padding:4px 12px;border-radius:20px}
 .oferta-list{list-style:none;display:grid;gap:8px;margin-top:18px}
 .oferta-list li{display:flex;align-items:flex-start;gap:10px;font-size:14px;color:var(--gris-tx)}
-.oferta-list li::before{content:'✓';color:var(--verde);font-weight:700;flex-shrink:0;font-size:15px}
-
+.oferta-list li::before{content:'v';color:var(--verde);font-weight:700;flex-shrink:0;font-size:15px}
 .cta-box{background:var(--marino);border-radius:16px;padding:44px 40px;text-align:center;position:relative;overflow:hidden}
 .cta-box::before{content:'';position:absolute;top:-60px;right:-60px;width:200px;height:200px;border-radius:50%;background:rgba(0,174,239,.07)}
 .cta-title{font-family:var(--condensed);font-size:32px;font-weight:800;color:#fff;margin-bottom:10px;line-height:1.15;position:relative;z-index:1}
 .cta-title .cyan{color:var(--cyan)}
 .cta-sub{color:var(--azul-borde);font-size:14px;margin-bottom:28px;max-width:440px;margin-left:auto;margin-right:auto;line-height:1.6;position:relative;z-index:1}
 .cta-btns{display:flex;gap:12px;justify-content:center;flex-wrap:wrap;margin-bottom:32px;position:relative;z-index:1}
-.btn-cta{display:inline-block;background:var(--naranja);color:#fff;font-weight:700;font-size:15px;padding:14px 32px;border-radius:8px;text-decoration:none;letter-spacing:.02em;transition:background .2s}
-.btn-cta:hover{background:#c96a1e}
-.btn-demo{display:inline-block;background:transparent;color:#fff;font-size:14px;padding:13px 24px;border-radius:8px;text-decoration:none;font-weight:600;border:1.5px solid rgba(255,255,255,.25);transition:border-color .2s}
-.btn-demo:hover{border-color:rgba(255,255,255,.6)}
+.btn-cta{display:inline-block;background:var(--naranja);color:#fff;font-weight:700;font-size:15px;padding:14px 32px;border-radius:8px;text-decoration:none;letter-spacing:.02em}
+.btn-demo{display:inline-block;background:transparent;color:#fff;font-size:14px;padding:13px 24px;border-radius:8px;text-decoration:none;font-weight:600;border:1.5px solid rgba(255,255,255,.25)}
 .cta-contacto{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:rgba(255,255,255,.08);border-radius:10px;overflow:hidden;position:relative;z-index:1}
 .cta-ci{background:rgba(255,255,255,.05);padding:14px 10px;text-align:center}
 .cta-cl{font-size:10px;text-transform:uppercase;letter-spacing:.1em;color:var(--cyan);margin-bottom:4px;font-weight:600}
 .cta-cv{font-size:13px;color:#fff;font-weight:600}
 .cta-cv a{color:#fff;text-decoration:none}
-
 .site-footer{background:var(--marino);padding:24px;margin-top:48px}
 .footer-inner{max-width:820px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;gap:20px;flex-wrap:wrap}
-.footer-logo img{width:130px;filter:brightness(0) invert(1) opacity(.6)}
+.footer-logo img{width:130px;filter:brightness(0) invert(1) opacity(.7)}
 .footer-text{font-size:11px;color:rgba(255,255,255,.4);line-height:1.6;text-align:right}
-
-/* ===== EDITOR PANEL ===== */
 #ed-toggle{position:fixed;top:50%;right:0;transform:translateY(-50%);z-index:1000;background:var(--marino);color:#fff;border:none;border-radius:8px 0 0 8px;padding:14px 8px;cursor:pointer;box-shadow:-2px 0 16px rgba(0,0,0,.2);transition:right .3s,background .2s;display:flex;flex-direction:column;align-items:center;gap:8px}
 #ed-toggle:hover{background:var(--azul-med)}
 #ed-toggle svg{width:16px;height:16px;stroke:currentColor;fill:none;stroke-width:2}
 #ed-toggle span{writing-mode:vertical-rl;font-family:var(--sans);font-size:10px;font-weight:700;letter-spacing:.1em;text-transform:uppercase}
 body.panel-open #ed-toggle{right:var(--panel-w)}
-
 #ed-panel{position:fixed;top:0;right:calc(-1 * var(--panel-w));width:var(--panel-w);height:100vh;background:#fff;border-left:1px solid var(--gris-line);box-shadow:-4px 0 24px rgba(0,0,0,.1);z-index:999;overflow-y:auto;transition:right .3s;display:flex;flex-direction:column}
 body.panel-open #ed-panel{right:0}
-
 .ep-head{background:var(--marino);color:#fff;padding:14px 18px;font-family:var(--condensed);font-size:15px;font-weight:700;letter-spacing:.04em;display:flex;align-items:center;justify-content:space-between;position:sticky;top:0;z-index:2}
 .ep-head em{color:var(--cyan);font-style:normal;margin-left:6px}
 .ep-x{background:none;border:none;color:rgba(255,255,255,.5);font-size:22px;cursor:pointer;line-height:1;padding:0}
-.ep-x:hover{color:#fff}
-
 .ep-export{padding:10px 14px;display:flex;gap:8px;border-bottom:1px solid var(--gris-line);background:var(--gris-bg)}
-.ep-btn{flex:1;padding:8px;border:none;border-radius:6px;font-size:11px;font-weight:700;cursor:pointer;font-family:var(--sans);letter-spacing:.04em;text-transform:uppercase;transition:opacity .2s}
-.ep-btn:hover{opacity:.85}
+.ep-btn{flex:1;padding:8px;border:none;border-radius:6px;font-size:11px;font-weight:700;cursor:pointer;font-family:var(--sans);letter-spacing:.04em;text-transform:uppercase}
 .ep-html{background:var(--azul-med);color:#fff}
 .ep-pdf{background:var(--naranja);color:#fff}
-
 .ep-body{padding:14px;flex:1}
 .ep-grp{margin-bottom:20px}
 .ep-grp-t{font-size:10px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--naranja);margin-bottom:10px;padding-bottom:6px;border-bottom:1px solid var(--gris-line)}
 .ep-f{margin-bottom:9px}
 .ep-f label{display:block;font-size:11px;font-weight:600;color:var(--gris-sub);margin-bottom:3px}
-.ep-f input{width:100%;padding:6px 9px;border:1px solid var(--gris-line);border-radius:6px;font-size:13px;font-family:var(--sans);color:var(--gris-tx);background:var(--blanco)}
+.ep-f input{width:100%;padding:6px 9px;border:1px solid var(--gris-line);border-radius:6px;font-size:13px;font-family:var(--sans);color:var(--gris-tx)}
 .ep-f input:focus{outline:none;border-color:var(--azul-med)}
-
 .ep-sw-row{display:flex;align-items:center;justify-content:space-between;padding:7px 0}
 .ep-sw-lbl{font-size:12px;color:var(--gris-tx);font-weight:500}
 .ep-sw{position:relative;width:36px;height:20px;flex-shrink:0}
@@ -185,238 +157,190 @@ body.panel-open #ed-panel{right:0}
 .ep-sl::before{content:'';position:absolute;width:14px;height:14px;left:3px;top:3px;background:#fff;border-radius:50%;transition:transform .2s}
 .ep-sw input:checked+.ep-sl{background:var(--verde)}
 .ep-sw input:checked+.ep-sl::before{transform:translateX(16px)}
-
-.ep-reset{margin:0 14px 14px;width:calc(100% - 28px);padding:8px;background:var(--gris-bg);border:1px solid var(--gris-line);border-radius:6px;font-size:11px;font-weight:600;color:var(--gris-sub);cursor:pointer;font-family:var(--sans);letter-spacing:.04em;text-transform:uppercase}
+.ep-reset{margin:0 14px 14px;width:calc(100% - 28px);padding:8px;background:var(--gris-bg);border:1px solid var(--gris-line);border-radius:6px;font-size:11px;font-weight:600;color:var(--gris-sub);cursor:pointer;font-family:var(--sans);text-transform:uppercase}
 .ep-reset:hover{border-color:var(--naranja);color:var(--naranja)}
-
-@media print{
-  #ed-toggle,#ed-panel{display:none !important}
-  body{margin-right:0 !important;background:#fff}
-  .section{page-break-inside:avoid}
-  .site-header,.flujo-paso,.cta-box,.site-footer,.oferta,thead th{-webkit-print-color-adjust:exact;print-color-adjust:exact}
-}
-@media(max-width:640px){
-  .header-inner{grid-template-columns:1fr;gap:20px;padding:28px 24px}
-  .header-logo img{width:160px}
-  .header-title{font-size:26px}
-  .header-strip{padding:12px 24px;gap:14px}
-  .flujo,.precios-grid,.incluye-grid,.tool-grid,.cta-contacto{grid-template-columns:1fr}
-  .cta-box{padding:32px 24px}
-  .oferta{padding:24px 20px}
-  .oferta::before{display:none}
-  .footer-inner{flex-direction:column;align-items:center}
-  .footer-text{text-align:center}
-  .cta-btns{flex-direction:column;align-items:center}
-  .btn-cta,.btn-demo{width:100%;text-align:center}
-  .section-title{font-size:24px}
-}
+@media print{#ed-toggle,#ed-panel{display:none !important}body{margin-right:0 !important;background:#fff}.site-header,.flujo-paso,.cta-box,.site-footer,.oferta,thead th{-webkit-print-color-adjust:exact;print-color-adjust:exact}}
+@media(max-width:640px){.header-inner{grid-template-columns:1fr;gap:20px;padding:28px 24px}.flujo,.precios-grid,.incluye-grid,.tool-grid,.cta-contacto{grid-template-columns:1fr}.cta-box{padding:32px 24px}.oferta{padding:24px 20px}.oferta::before{display:none}.footer-inner{flex-direction:column;align-items:center}.footer-text{text-align:center}.cta-btns{flex-direction:column;align-items:center}.btn-cta,.btn-demo{width:100%;text-align:center}.section-title{font-size:24px}}
 </style>
 </head>
 <body>
-
-<button id="ed-toggle" onclick="togglePanel()" title="Panel de edición">
+<button id="ed-toggle" onclick="togglePanel()">
   <svg viewBox="0 0 24 24"><path d="M11 4H4a2 2 0 00-2 2v14a2 2 0 002 2h14a2 2 0 002-2v-7"/><path d="M18.5 2.5a2.121 2.121 0 013 3L12 15l-4 1 1-4 9.5-9.5z"/></svg>
   <span>Editar</span>
 </button>
-
 <div id="ed-panel">
-  <div class="ep-head">&#9998; <em>Panel de edición</em><button class="ep-x" onclick="togglePanel()">&#215;</button></div>
+  <div class="ep-head">Panel de <em>edicion</em><button class="ep-x" onclick="togglePanel()">x</button></div>
   <div class="ep-export">
-    <button class="ep-btn ep-html" onclick="exportHTML()">&#11015; HTML</button>
-    <button class="ep-btn ep-pdf" onclick="exportPDF()">&#128424; PDF</button>
+    <button class="ep-btn ep-html" onclick="exportHTML()">Descargar HTML</button>
+    <button class="ep-btn ep-pdf" onclick="exportPDF()">Exportar PDF</button>
   </div>
   <div class="ep-body">
-    <div class="ep-grp">
-      <p class="ep-grp-t">&#127973; Encabezado</p>
-      <div class="ep-f"><label>T&#237;tulo l&#237;nea 1</label><input data-bind="titulo1" value="Su consultorio atendiendo"></div>
-      <div class="ep-f"><label>T&#237;tulo l&#237;nea 2 (cyan)</label><input data-bind="titulo2" value="pacientes las 24 horas"></div>
-      <div class="ep-f"><label>T&#237;tulo l&#237;nea 3</label><input data-bind="titulo3" value="sin que usted est&#233; presente"></div>
+    <div class="ep-grp"><p class="ep-grp-t">Encabezado</p>
+      <div class="ep-f"><label>Titulo linea 1</label><input data-bind="titulo1" value="Su consultorio atendiendo"></div>
+      <div class="ep-f"><label>Titulo linea 2 (cyan)</label><input data-bind="titulo2" value="pacientes las 24 horas"></div>
+      <div class="ep-f"><label>Titulo linea 3</label><input data-bind="titulo3" value="sin que usted este presente"></div>
     </div>
-    <div class="ep-grp">
-      <p class="ep-grp-t">&#128176; Precios</p>
-      <div class="ep-f"><label>Setup &#250;nico ($)</label><input data-bind="setup" value="690"></div>
+    <div class="ep-grp"><p class="ep-grp-t">Precios</p>
+      <div class="ep-f"><label>Setup unico ($)</label><input data-bind="setup" value="690"></div>
       <div class="ep-f"><label>Mensualidad ($)</label><input data-bind="mensual" value="149"></div>
       <div class="ep-f"><label>Precio fundador ($)</label><input data-bind="fundador" value="483"></div>
       <div class="ep-f"><label>Ahorro fundador ($)</label><input data-bind="ahorro" value="207"></div>
     </div>
-    <div class="ep-grp">
-      <p class="ep-grp-t">&#128222; Contacto</p>
-      <div class="ep-f"><label>WhatsApp (n&#250;mero intl.)</label><input data-bind="wa_num" value="593983031058"></div>
+    <div class="ep-grp"><p class="ep-grp-t">Contacto</p>
+      <div class="ep-f"><label>WhatsApp (numero intl)</label><input data-bind="wa_num" value="593983031058"></div>
       <div class="ep-f"><label>WhatsApp (visible)</label><input data-bind="wa_vis" value="098 303 1058"></div>
       <div class="ep-f"><label>Sitio web</label><input data-bind="web" value="consultoriodigital.net"></div>
       <div class="ep-f"><label>URL demo en vivo</label><input data-bind="demo" value="modo2.consultoriodigital.net"></div>
     </div>
-    <div class="ep-grp">
-      <p class="ep-grp-t">&#128065; Secciones</p>
+    <div class="ep-grp"><p class="ep-grp-t">Secciones</p>
       <div class="ep-sw-row"><span class="ep-sw-lbl">Oferta fundador</span><label class="ep-sw"><input type="checkbox" checked onchange="toggleSec('sec-oferta',this.checked)"><span class="ep-sl"></span></label></div>
       <div class="ep-sw-row"><span class="ep-sw-lbl">Tabla comparativa</span><label class="ep-sw"><input type="checkbox" checked onchange="toggleSec('sec-tabla',this.checked)"><span class="ep-sl"></span></label></div>
-      <div class="ep-sw-row"><span class="ep-sw-lbl">&#191;Qui&#233;n paga qu&#233;?</span><label class="ep-sw"><input type="checkbox" checked onchange="toggleSec('sec-herr',this.checked)"><span class="ep-sl"></span></label></div>
+      <div class="ep-sw-row"><span class="ep-sw-lbl">Quien paga que</span><label class="ep-sw"><input type="checkbox" checked onchange="toggleSec('sec-herr',this.checked)"><span class="ep-sl"></span></label></div>
     </div>
   </div>
-  <button class="ep-reset" onclick="resetAll()">&#8634; Restablecer valores</button>
+  <button class="ep-reset" onclick="resetAll()">Restablecer valores</button>
 </div>
-
 <header class="site-header">
   <div class="header-topbar"></div>
   <div class="header-inner">
     <div class="header-logo">
-      <img src="logo-fondo-negro-CD.png" alt="Consultorio Digital" onerror="this.style.display='none';document.getElementById('logo-ph').style.display='flex'">
+      <img src="logo-fondo-CD.png" alt="Consultorio Digital" onerror="this.style.display='none';document.getElementById('logo-ph').style.display='flex'">
       <div id="logo-ph" class="logo-ph">Consultorio Digital</div>
     </div>
     <div class="header-content">
-      <span class="badge-plan">Plan Recepci&#243;n IA</span>
+      <span class="badge-plan">Plan Recepcion IA</span>
       <h1 class="header-title">
         <span data-ed="titulo1">Su consultorio atendiendo</span><br>
         <span class="cyan" data-ed="titulo2">pacientes las 24 horas</span><br>
-        <span data-ed="titulo3">sin que usted est&#233; presente</span>
+        <span data-ed="titulo3">sin que usted este presente</span>
       </h1>
-      <p class="header-desc">Propuesta personalizada &middot; Agente de Recepci&#243;n con Inteligencia Artificial para WhatsApp</p>
+      <p class="header-desc">Propuesta personalizada - Agente de Recepcion con Inteligencia Artificial para WhatsApp</p>
     </div>
   </div>
   <div class="header-strip">
     <div class="strip-item"><div class="strip-dot"></div> Respuesta inmediata a pacientes</div>
-    <div class="strip-item"><div class="strip-dot"></div> Agendamiento autom&#225;tico</div>
-    <div class="strip-item"><div class="strip-dot"></div> Sin diagn&#243;sticos m&#233;dicos</div>
-    <div class="strip-item"><div class="strip-dot"></div> Activo en 7 d&#237;as</div>
+    <div class="strip-item"><div class="strip-dot"></div> Agendamiento automatico</div>
+    <div class="strip-item"><div class="strip-dot"></div> Sin diagnosticos medicos</div>
+    <div class="strip-item"><div class="strip-dot"></div> Activo en 7 dias</div>
   </div>
 </header>
-
 <main><div class="container">
-
   <section class="section">
     <p class="section-label">El problema</p>
-    <h2 class="section-title">&#191;Le suena familiar?</h2>
-    <p class="section-intro">Estos son los dolores m&#225;s comunes que enfrentan los consultorios hoy en Ecuador.</p>
+    <h2 class="section-title">Le suena familiar?</h2>
+    <p class="section-intro">Estos son los dolores mas comunes que enfrentan los consultorios hoy en Ecuador.</p>
     <ul class="problema-list">
-      <li><span class="num">01</span>Pacientes escribiendo por WhatsApp a las 11pm sin obtener respuesta &mdash; y buscando otro m&#233;dico.</li>
-      <li><span class="num">02</span>Horas perdidas respondiendo siempre lo mismo: horarios, precios, ubicaci&#243;n, requisitos previos.</li>
-      <li><span class="num">03</span>Citas que no se concretan porque el proceso de agendamiento genera fricci&#243;n o demora.</li>
-      <li><span class="num">04</span>Recepci&#243;n saturada con tareas repetitivas en lugar de brindar atenci&#243;n de calidad presencial.</li>
-      <li><span class="num">05</span>Ingresos perdidos por pacientes que preguntan, no obtienen respuesta r&#225;pida y no regresan.</li>
+      <li><span class="num">01</span>Pacientes escribiendo por WhatsApp a las 11pm sin obtener respuesta y buscando otro medico.</li>
+      <li><span class="num">02</span>Horas perdidas respondiendo siempre lo mismo: horarios, precios, ubicacion, requisitos previos.</li>
+      <li><span class="num">03</span>Citas que no se concretan porque el proceso de agendamiento genera friccion o demora.</li>
+      <li><span class="num">04</span>Recepcion saturada con tareas repetitivas en lugar de brindar atencion de calidad presencial.</li>
+      <li><span class="num">05</span>Ingresos perdidos por pacientes que preguntan, no obtienen respuesta rapida y no regresan.</li>
     </ul>
   </section>
-
   <section class="section">
-    <p class="section-label">La soluci&#243;n</p>
-    <h2 class="section-title">C&#243;mo funciona el sistema</h2>
-    <p class="section-intro">Tres pasos autom&#225;ticos &mdash; desde el primer mensaje hasta la cita confirmada.</p>
+    <p class="section-label">La solucion</p>
+    <h2 class="section-title">Como funciona el sistema</h2>
+    <p class="section-intro">Tres pasos automaticos desde el primer mensaje hasta la cita confirmada.</p>
     <div class="flujo">
       <div class="flujo-paso"><p class="flujo-num">Paso 01</p><p class="flujo-titulo">Paciente escribe por WhatsApp</p><p class="flujo-desc">A cualquier hora, desde cualquier lugar. El sistema responde en segundos.</p></div>
-      <div class="flujo-paso"><p class="flujo-num">Paso 02</p><p class="flujo-titulo">Agente IA atiende al instante</p><p class="flujo-desc">Responde preguntas, brinda orientaci&#243;n general y detecta urgencias autom&#225;ticamente.</p></div>
-      <div class="flujo-paso"><p class="flujo-num">Paso 03</p><p class="flujo-titulo">Paciente agenda su cita online</p><p class="flujo-desc">Confirmaci&#243;n autom&#225;tica con direcci&#243;n, recomendaciones y recordatorio 24h antes.</p></div>
+      <div class="flujo-paso"><p class="flujo-num">Paso 02</p><p class="flujo-titulo">Agente IA atiende al instante</p><p class="flujo-desc">Responde preguntas, brinda orientacion general y detecta urgencias automaticamente.</p></div>
+      <div class="flujo-paso"><p class="flujo-num">Paso 03</p><p class="flujo-titulo">Paciente agenda su cita online</p><p class="flujo-desc">Confirmacion automatica con direccion, recomendaciones y recordatorio 24h antes.</p></div>
     </div>
-    <p class="nota-box">El agente responde preguntas frecuentes, brinda orientaci&#243;n general <strong>sin emitir diagn&#243;sticos m&#233;dicos</strong>, filtra urgencias y gu&#237;a al paciente al agendamiento. Cuando confirma su cita, el sistema env&#237;a autom&#225;ticamente la direcci&#243;n, recomendaciones pre-consulta y un recordatorio 24 horas antes.</p>
+    <p class="nota-box">El agente responde preguntas frecuentes, brinda orientacion general <strong>sin emitir diagnosticos medicos</strong>, filtra urgencias y guia al paciente al agendamiento.</p>
   </section>
-
   <section class="section">
-    <p class="section-label">Inversi&#243;n</p>
-    <h2 class="section-title">Precios del Plan Recepci&#243;n IA</h2>
-    <p class="section-intro">Estructura transparente &mdash; sabe exactamente qu&#233; paga y a qui&#233;n.</p>
+    <p class="section-label">Inversion</p>
+    <h2 class="section-title">Precios del Plan Recepcion IA</h2>
+    <p class="section-intro">Estructura transparente.</p>
     <div class="precios-grid">
-      <div class="precio-card">
-        <p class="precio-label">Inversi&#243;n inicial &mdash; setup &#250;nico</p>
-        <p class="precio-monto">$<span data-ed="setup">690</span></p>
-        <p class="precio-nota">Configuraci&#243;n completa, integraci&#243;n, pruebas y capacitaci&#243;n al equipo</p>
-      </div>
-      <div class="precio-card nar">
-        <p class="precio-label">Servicio mensual &mdash; mantenimiento</p>
-        <p class="precio-monto">$<span data-ed="mensual">149</span><small>/mes</small></p>
-        <p class="precio-nota">Soporte, ajustes, reporte mensual y optimizaci&#243;n continua del flujo</p>
-      </div>
+      <div class="precio-card"><p class="precio-label">Inversion inicial</p><p class="precio-monto">$<span data-ed="setup">690</span></p><p class="precio-nota">Configuracion completa, integracion, pruebas y capacitacion al equipo</p></div>
+      <div class="precio-card nar"><p class="precio-label">Servicio mensual</p><p class="precio-monto">$<span data-ed="mensual">149</span><small>/mes</small></p><p class="precio-nota">Soporte, ajustes, reporte mensual y optimizacion continua</p></div>
     </div>
-    <div class="herr-nota"><strong>Herramientas adicionales &mdash; contratadas directamente por el consultorio:</strong> ManyChat Pro WhatsApp <strong>$29/mes</strong> &middot; Make automatizaci&#243;n <strong>$0&ndash;9/mes</strong> &middot; KiviCare agenda <strong>incluido en plan web</strong>. Esto le garantiza control total y total transparencia.</div>
+    <div class="herr-nota"><strong>Herramientas adicionales contratadas por el consultorio:</strong> ManyChat Pro WhatsApp <strong>$29/mes</strong> - Make automatizacion <strong>$0-9/mes</strong> - KiviCare agenda <strong>incluido en plan web</strong>.</div>
   </section>
-
   <section class="section">
     <p class="section-label">Entregables</p>
-    <h2 class="section-title">&#191;Qu&#233; incluye el plan?</h2>
-    <p class="section-intro">Todo lo necesario para tener su recepci&#243;n digital funcionando desde el d&#237;a 7.</p>
+    <h2 class="section-title">Que incluye el plan?</h2>
+    <p class="section-intro">Todo lo necesario para tener su recepcion digital funcionando desde el dia 7.</p>
     <div class="incluye-grid">
-      <div class="check-item"><div class="check-icon"></div><span>Men&#250; inteligente 24/7: Agendar / Consulta breve / Informaci&#243;n</span></div>
-      <div class="check-item"><div class="check-icon"></div><span>Verificaci&#243;n autom&#225;tica de cita agendada</span></div>
-      <div class="check-item"><div class="check-icon"></div><span>IA orientativa sin diagn&#243;stico m&#233;dico (cumplimiento legal)</span></div>
-      <div class="check-item"><div class="check-icon"></div><span>Confirmaci&#243;n con direcci&#243;n y recomendaciones pre-consulta</span></div>
-      <div class="check-item"><div class="check-icon"></div><span>Filtro autom&#225;tico de urgencias con derivaci&#243;n apropiada</span></div>
-      <div class="check-item"><div class="check-icon"></div><span>Recordatorio autom&#225;tico 24 horas antes de la cita</span></div>
-      <div class="check-item"><div class="check-icon"></div><span>Agendamiento v&#237;a landing page KiviCare integrada en su web</span></div>
+      <div class="check-item"><div class="check-icon"></div><span>Menu inteligente 24/7: Agendar / Consulta breve / Informacion</span></div>
+      <div class="check-item"><div class="check-icon"></div><span>Verificacion automatica de cita agendada</span></div>
+      <div class="check-item"><div class="check-icon"></div><span>IA orientativa sin diagnostico medico (cumplimiento legal)</span></div>
+      <div class="check-item"><div class="check-icon"></div><span>Confirmacion con direccion y recomendaciones pre-consulta</span></div>
+      <div class="check-item"><div class="check-icon"></div><span>Filtro automatico de urgencias con derivacion apropiada</span></div>
+      <div class="check-item"><div class="check-icon"></div><span>Recordatorio automatico 24 horas antes de la cita</span></div>
+      <div class="check-item"><div class="check-icon"></div><span>Agendamiento via landing page KiviCare integrada en su web</span></div>
       <div class="check-item"><div class="check-icon"></div><span>Reporte mensual: consultas, agendamientos y preguntas frecuentes</span></div>
       <div class="check-item"><div class="check-icon"></div><span>Captura de datos: nombre, ciudad y motivo de consulta</span></div>
       <div class="check-item"><div class="check-icon"></div><span>Soporte y ajustes mensuales del flujo incluidos</span></div>
     </div>
   </section>
-
   <section class="section" id="sec-tabla">
-    <p class="section-label">Comparaci&#243;n</p>
+    <p class="section-label">Comparacion</p>
     <h2 class="section-title">Los tres planes disponibles</h2>
     <p class="section-intro">Encuentre el que mejor se adapta a su consultorio.</p>
-    <div class="tabla-wrap">
-      <table>
-        <thead><tr><th>Caracter&#237;stica</th><th>Agenda Express</th><th class="feat">Recepci&#243;n IA &#9733;</th><th>Cl&#237;nica 360</th></tr></thead>
-        <tbody>
-          <tr><td>Men&#250; IA WhatsApp 24/7</td><td class="ok">&#10003;</td><td class="ok feat">&#10003;</td><td class="ok">&#10003;</td></tr>
-          <tr><td>IA orientativa sin diagn&#243;stico</td><td class="ok">&#10003;</td><td class="ok feat">&#10003;</td><td class="ok">&#10003;</td></tr>
-          <tr><td>Filtro de urgencias</td><td class="no">&mdash;</td><td class="ok feat">&#10003;</td><td class="ok">&#10003;</td></tr>
-          <tr><td>Agenda KiviCare (landing propia)</td><td class="no">&mdash;</td><td class="ok feat">&#10003;</td><td class="ok">&#10003;</td></tr>
-          <tr><td>Captura de datos del paciente</td><td class="no">&mdash;</td><td class="ok feat">&#10003;</td><td class="ok">&#10003;</td></tr>
-          <tr><td>Verificaci&#243;n cita agendada</td><td style="font-size:12px;color:var(--gris-sub)">Manual</td><td class="auto feat">Autom&#225;tico</td><td class="auto">Autom&#225;tico</td></tr>
-          <tr><td>Reporte mensual</td><td class="no">&mdash;</td><td class="ok feat">&#10003;</td><td class="ok">&#10003;</td></tr>
-          <tr><td>Multi-doctor / multi-servicio</td><td class="no">&mdash;</td><td class="no feat">&mdash;</td><td class="ok">&#10003;</td></tr>
-          <tr><td>Seguimiento a no-agendados</td><td class="no">&mdash;</td><td class="no feat">&mdash;</td><td class="ok">&#10003;</td></tr>
-          <tr class="precio-row"><td>Setup &#250;nico</td><td>$390</td><td class="feat">$<span data-ed="setup">690</span></td><td>$1,200</td></tr>
-          <tr class="precio-row"><td>Servicio mensual</td><td>$89/mes</td><td class="feat">$<span data-ed="mensual">149</span>/mes</td><td>$249/mes</td></tr>
-        </tbody>
-      </table>
-    </div>
+    <div class="tabla-wrap"><table>
+      <thead><tr><th>Caracteristica</th><th>Agenda Express</th><th class="feat">Recepcion IA</th><th>Clinica 360</th></tr></thead>
+      <tbody>
+        <tr><td>Menu IA WhatsApp 24/7</td><td class="ok">+</td><td class="ok feat">+</td><td class="ok">+</td></tr>
+        <tr><td>IA orientativa sin diagnostico</td><td class="ok">+</td><td class="ok feat">+</td><td class="ok">+</td></tr>
+        <tr><td>Filtro de urgencias</td><td class="no">-</td><td class="ok feat">+</td><td class="ok">+</td></tr>
+        <tr><td>Agenda KiviCare</td><td class="no">-</td><td class="ok feat">+</td><td class="ok">+</td></tr>
+        <tr><td>Captura de datos</td><td class="no">-</td><td class="ok feat">+</td><td class="ok">+</td></tr>
+        <tr><td>Verificacion cita</td><td style="font-size:12px;color:var(--gris-sub)">Manual</td><td class="auto feat">Automatico</td><td class="auto">Automatico</td></tr>
+        <tr><td>Reporte mensual</td><td class="no">-</td><td class="ok feat">+</td><td class="ok">+</td></tr>
+        <tr><td>Multi-doctor</td><td class="no">-</td><td class="no feat">-</td><td class="ok">+</td></tr>
+        <tr><td>Seguimiento no-agendados</td><td class="no">-</td><td class="no feat">-</td><td class="ok">+</td></tr>
+        <tr class="precio-row"><td>Setup unico</td><td>$390</td><td class="feat">$<span data-ed="setup">690</span></td><td>$1,200</td></tr>
+        <tr class="precio-row"><td>Servicio mensual</td><td>$89/mes</td><td class="feat">$<span data-ed="mensual">149</span>/mes</td><td>$249/mes</td></tr>
+      </tbody>
+    </table></div>
   </section>
-
   <section class="section" id="sec-herr">
     <p class="section-label">Transparencia total</p>
-    <h2 class="section-title">&#191;Qui&#233;n paga qu&#233;?</h2>
+    <h2 class="section-title">Quien paga que?</h2>
     <p class="section-intro">Sin costos ocultos ni intermediarios innecesarios.</p>
     <div class="tool-grid">
-      <div class="tool-card"><div class="tool-ico"><svg viewBox="0 0 24 24" fill="none" stroke="#2176C7" stroke-width="2"><path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z"/></svg></div><div><p class="tool-name">ManyChat Pro (WhatsApp)</p><p class="tool-cost">$29/mes</p><p class="tool-who">Lo contrata el consultorio directo &middot; Canal WhatsApp Business API</p></div></div>
-      <div class="tool-card"><div class="tool-ico"><svg viewBox="0 0 24 24" fill="none" stroke="#2176C7" stroke-width="2"><circle cx="12" cy="12" r="3"/><path d="M12 1v4M12 19v4M4.22 4.22l2.83 2.83M16.95 16.95l2.83 2.83M1 12h4M19 12h4"/></svg></div><div><p class="tool-name">Make (automatizaci&#243;n)</p><p class="tool-cost">$0&ndash;9/mes</p><p class="tool-who">Lo contrata el consultorio directo &middot; Free hasta 1,000 ops/mes</p></div></div>
-      <div class="tool-card"><div class="tool-ico" style="background:#E6F9F3"><svg viewBox="0 0 24 24" fill="none" stroke="#059669" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M8 12l3 3 5-5"/></svg></div><div><p class="tool-name">OpenAI API</p><p class="tool-cost" style="color:var(--verde)">Incluido en tarifa</p><p class="tool-who">Administrado por Consultorio Digital &middot; ~$2&ndash;5/mes con uso razonable</p></div></div>
-      <div class="tool-card"><div class="tool-ico"><svg viewBox="0 0 24 24" fill="none" stroke="#2176C7" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg></div><div><p class="tool-name">KiviCare (agenda m&#233;dica)</p><p class="tool-cost">Incluido en su web</p><p class="tool-who">Plataforma de agendamiento integrada en su sitio WordPress</p></div></div>
+      <div class="tool-card"><div class="tool-ico"><svg viewBox="0 0 24 24" fill="none" stroke="#2176C7" stroke-width="2"><path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z"/></svg></div><div><p class="tool-name">ManyChat Pro (WhatsApp)</p><p class="tool-cost">$29/mes</p><p class="tool-who">Lo contrata el consultorio directo</p></div></div>
+      <div class="tool-card"><div class="tool-ico"><svg viewBox="0 0 24 24" fill="none" stroke="#2176C7" stroke-width="2"><circle cx="12" cy="12" r="3"/><path d="M12 1v4M12 19v4M4.22 4.22l2.83 2.83M16.95 16.95l2.83 2.83M1 12h4M19 12h4"/></svg></div><div><p class="tool-name">Make (automatizacion)</p><p class="tool-cost">$0-9/mes</p><p class="tool-who">Lo contrata el consultorio directo</p></div></div>
+      <div class="tool-card"><div class="tool-ico" style="background:#E6F9F3"><svg viewBox="0 0 24 24" fill="none" stroke="#059669" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M8 12l3 3 5-5"/></svg></div><div><p class="tool-name">OpenAI API</p><p class="tool-cost" style="color:var(--verde)">Incluido en tarifa</p><p class="tool-who">Administrado por Consultorio Digital</p></div></div>
+      <div class="tool-card"><div class="tool-ico"><svg viewBox="0 0 24 24" fill="none" stroke="#2176C7" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg></div><div><p class="tool-name">KiviCare (agenda medica)</p><p class="tool-cost">Incluido en su web</p><p class="tool-who">Integrada en su sitio WordPress</p></div></div>
     </div>
   </section>
-
   <section class="section">
     <p class="section-label">Proceso</p>
-    <h2 class="section-title">Implementaci&#243;n en 7 d&#237;as</h2>
-    <p class="section-intro">Un proceso claro, sin complicaciones t&#233;cnicas para el consultorio.</p>
+    <h2 class="section-title">Implementacion en 7 dias</h2>
+    <p class="section-intro">Un proceso claro, sin complicaciones tecnicas para el consultorio.</p>
     <div class="pasos">
-      <div class="paso"><div class="paso-dia">D&#237;as 1&ndash;2</div><div class="paso-body"><p class="paso-titulo">Configuraci&#243;n inicial</p><p class="paso-desc">Conexi&#243;n ManyChat + WhatsApp, estructura del agente IA, personalizaci&#243;n de mensajes con el tono y especialidad del consultorio.</p></div></div>
-      <div class="paso"><div class="paso-dia">D&#237;as 3&ndash;4</div><div class="paso-body"><p class="paso-titulo">Integraci&#243;n de agenda</p><p class="paso-desc">Configuraci&#243;n de KiviCare, enlace con el flujo de WhatsApp, pruebas completas de agendamiento y verificaci&#243;n autom&#225;tica.</p></div></div>
-      <div class="paso"><div class="paso-dia">D&#237;as 5&ndash;6</div><div class="paso-body"><p class="paso-titulo">Pruebas y ajustes</p><p class="paso-desc">Simulaci&#243;n de conversaciones reales, ajuste de respuestas de IA, calibraci&#243;n del filtro de urgencias y personalizaci&#243;n final.</p></div></div>
-      <div class="paso"><div class="paso-dia">D&#237;a 7</div><div class="paso-body"><p class="paso-titulo">Lanzamiento</p><p class="paso-desc">Activaci&#243;n del sistema en vivo, capacitaci&#243;n al equipo del consultorio y verificaci&#243;n final con prueba real de paciente.</p></div></div>
-      <div class="paso"><div class="paso-dia nar">Mes 1+</div><div class="paso-body"><p class="paso-titulo">Mantenimiento y optimizaci&#243;n mensual</p><p class="paso-desc">Reporte de m&#233;tricas, ajuste de flujos seg&#250;n comportamiento real de pacientes, actualizaci&#243;n de FAQ y soporte continuo incluido.</p></div></div>
+      <div class="paso"><div class="paso-dia">Dias 1-2</div><div class="paso-body"><p class="paso-titulo">Configuracion inicial</p><p class="paso-desc">Conexion ManyChat + WhatsApp, estructura del agente IA, personalizacion de mensajes.</p></div></div>
+      <div class="paso"><div class="paso-dia">Dias 3-4</div><div class="paso-body"><p class="paso-titulo">Integracion de agenda</p><p class="paso-desc">Configuracion de KiviCare, enlace con el flujo de WhatsApp y pruebas completas.</p></div></div>
+      <div class="paso"><div class="paso-dia">Dias 5-6</div><div class="paso-body"><p class="paso-titulo">Pruebas y ajustes</p><p class="paso-desc">Simulacion de conversaciones reales, calibracion del filtro de urgencias y personalizacion final.</p></div></div>
+      <div class="paso"><div class="paso-dia">Dia 7</div><div class="paso-body"><p class="paso-titulo">Lanzamiento</p><p class="paso-desc">Activacion en vivo, capacitacion al equipo y verificacion final con prueba real de paciente.</p></div></div>
+      <div class="paso"><div class="paso-dia nar">Mes 1+</div><div class="paso-body"><p class="paso-titulo">Mantenimiento y optimizacion mensual</p><p class="paso-desc">Reporte de metricas, ajuste de flujos, actualizacion de FAQ y soporte continuo incluido.</p></div></div>
     </div>
   </section>
-
   <section class="section" id="sec-oferta">
     <p class="section-label">Oferta especial</p>
     <h2 class="section-title">Precio fundador</h2>
-    <p class="section-intro">Disponible &#250;nicamente para los primeros 5 consultorios.</p>
+    <p class="section-intro">Disponible unicamente para los primeros 5 consultorios.</p>
     <div class="oferta">
       <h3 class="oferta-titulo">30% de descuento en el setup inicial</h3>
       <p class="oferta-sub">Mensualidad al precio completo desde el primer mes. Cupos limitados.</p>
-      <div class="oferta-precio"><del>$<span data-ed="setup">690</span></del>&nbsp;$<span data-ed="fundador">483</span>&nbsp;<span class="oferta-ahorro">Ahorra $<span data-ed="ahorro">207</span></span></div>
+      <div class="oferta-precio"><del>$<span data-ed="setup">690</span></del> $<span data-ed="fundador">483</span> <span class="oferta-ahorro">Ahorra $<span data-ed="ahorro">207</span></span></div>
       <ul class="oferta-list">
-        <li>Mensualidad de $<span data-ed="mensual">149</span>/mes al precio completo desde el d&#237;a 1.</li>
+        <li>Mensualidad de $<span data-ed="mensual">149</span>/mes al precio completo desde el dia 1.</li>
         <li>A cambio: un testimonio breve sobre los resultados obtenidos.</li>
-        <li>Permiso de publicar el caso de &#233;xito (con su autorizaci&#243;n expresa).</li>
-        <li>Sin contratos largos &mdash; cancele cuando quiera con 30 d&#237;as de aviso.</li>
+        <li>Permiso de publicar el caso de exito (con su autorizacion expresa).</li>
+        <li>Sin contratos largos. Cancele cuando quiera con 30 dias de aviso.</li>
       </ul>
     </div>
   </section>
-
   <section class="section" style="border-top:none;padding-top:0">
     <div class="cta-box">
       <h2 class="cta-title">El siguiente paso es<br><span class="cyan">una demo de 10 minutos</span></h2>
-      <p class="cta-sub">Le mostramos el sistema funcionando en vivo, con preguntas reales de pacientes. Sin compromiso ni tecnicismos.</p>
+      <p class="cta-sub">Le mostramos el sistema funcionando en vivo, con preguntas reales de pacientes. Sin compromiso.</p>
       <div class="cta-btns">
-        <a id="lnk-wa-btn" href="https://wa.me/593983031058?text=Hola%20Rommel%2C%20me%20interesa%20la%20demo%20del%20sistema%20de%20recepci%C3%B3n%20IA" class="btn-cta" target="_blank">Solicitar demo gratuita por WhatsApp</a>
+        <a id="lnk-wa-btn" href="https://wa.me/593983031058?text=Hola%20Rommel%2C%20me%20interesa%20la%20demo%20del%20sistema%20de%20recepcion%20IA" class="btn-cta" target="_blank">Solicitar demo gratuita por WhatsApp</a>
         <a id="lnk-demo-btn" href="https://modo2.consultoriodigital.net" class="btn-demo" target="_blank">Ver demo en vivo</a>
       </div>
       <div class="cta-contacto">
@@ -426,25 +350,22 @@ body.panel-open #ed-panel{right:0}
       </div>
     </div>
   </section>
-
 </div></main>
-
 <footer class="site-footer">
   <div class="footer-inner">
     <div class="footer-logo">
-      <img src="logo-fondo-negro-CD.png" alt="Consultorio Digital" onerror="this.style.display='none'">
+      <img src="logo-fondo-CD.png" alt="Consultorio Digital" onerror="this.style.display='none'">
     </div>
-    <p class="footer-text">Consultorio Digital &middot; Sombrero Rojo Agency &middot; Quito, Ecuador<br>Propuesta confidencial. Precios v&#225;lidos por 30 d&#237;as desde la fecha de entrega.</p>
+    <p class="footer-text">Consultorio Digital - Sombrero Rojo Agency - Quito, Ecuador<br>Propuesta confidencial. Precios validos por 30 dias desde la fecha de entrega.</p>
   </div>
 </footer>
-
 <script>
-const DEFS={setup:'690',mensual:'149',fundador:'483',ahorro:'207',wa_num:'593983031058',wa_vis:'098 303 1058',web:'consultoriodigital.net',demo:'modo2.consultoriodigital.net',titulo1:'Su consultorio atendiendo',titulo2:'pacientes las 24 horas',titulo3:'sin que usted esté presente'};
+const DEFS={setup:'690',mensual:'149',fundador:'483',ahorro:'207',wa_num:'593983031058',wa_vis:'098 303 1058',web:'consultoriodigital.net',demo:'modo2.consultoriodigital.net',titulo1:'Su consultorio atendiendo',titulo2:'pacientes las 24 horas',titulo3:'sin que usted este presente'};
 function togglePanel(){document.body.classList.toggle('panel-open')}
 function toggleSec(id,v){const el=document.getElementById(id);if(el)el.style.display=v?'':'none'}
 function applyField(k,v){
   document.querySelectorAll('[data-ed="'+k+'"]').forEach(el=>el.textContent=v);
-  if(k==='wa_num'){const t=encodeURIComponent('Hola Rommel, me interesa la demo del sistema de recepción IA');document.getElementById('lnk-wa-btn').href='https://wa.me/'+v+'?text='+t;document.getElementById('lnk-wa').href='https://wa.me/'+v;}
+  if(k==='wa_num'){const t=encodeURIComponent('Hola Rommel, me interesa la demo del sistema de recepcion IA');document.getElementById('lnk-wa-btn').href='https://wa.me/'+v+'?text='+t;document.getElementById('lnk-wa').href='https://wa.me/'+v;}
   if(k==='web'){document.getElementById('lnk-web').href='https://'+v;}
   if(k==='demo'){document.getElementById('lnk-demo').href='https://'+v;document.getElementById('lnk-demo-btn').href='https://'+v;}
 }

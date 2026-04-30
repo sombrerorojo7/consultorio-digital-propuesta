@@ -23,7 +23,7 @@
   --blanco:     #FFFFFF;
   --condensed:  'Bebas Neue', 'Arial Narrow', sans-serif;
   --sans:       'Barlow', system-ui, sans-serif;
-  --panel-w:    310px;
+  --panel-w:    320px;
 }
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
 html{scroll-behavior:smooth}
@@ -151,6 +151,7 @@ tbody tr:last-child td{border-bottom:none}
 .footer-logo img{width:130px;mix-blend-mode:screen;opacity:.85}
 .footer-text{font-size:11px;color:rgba(255,255,255,.4);line-height:1.6;text-align:right}
 
+/* Panel */
 #ed-toggle{position:fixed;top:50%;right:0;transform:translateY(-50%);z-index:1000;background:var(--marino);color:#fff;border:none;border-radius:8px 0 0 8px;padding:14px 8px;cursor:pointer;box-shadow:-2px 0 16px rgba(0,0,0,.2);transition:right .3s,background .2s;display:flex;flex-direction:column;align-items:center;gap:8px}
 #ed-toggle:hover{background:var(--azul-med)}
 #ed-toggle svg{width:16px;height:16px;stroke:currentColor;fill:none;stroke-width:2}
@@ -172,8 +173,10 @@ body.panel-open #ed-panel{right:0}
 .ep-grp-t{font-size:10px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--naranja);margin-bottom:10px;padding-bottom:6px;border-bottom:1px solid var(--gris-line)}
 .ep-f{margin-bottom:9px}
 .ep-f label{display:block;font-size:11px;font-weight:600;color:var(--gris-sub);margin-bottom:3px}
-.ep-f input{width:100%;padding:6px 9px;border:1px solid var(--gris-line);border-radius:6px;font-size:13px;font-family:var(--sans);color:var(--gris-tx);background:#fff}
-.ep-f input:focus{outline:none;border-color:var(--azul-med)}
+.ep-f input,.ep-f select{width:100%;padding:6px 9px;border:1px solid var(--gris-line);border-radius:6px;font-size:13px;font-family:var(--sans);color:var(--gris-tx);background:#fff}
+.ep-f input:focus,.ep-f select:focus{outline:none;border-color:var(--azul-med)}
+.ep-f select{cursor:pointer}
+.ep-2col{display:grid;grid-template-columns:1fr 1fr;gap:8px}
 .ep-sw-row{display:flex;align-items:center;justify-content:space-between;padding:7px 0}
 .ep-sw-lbl{font-size:12px;color:var(--gris-tx);font-weight:500}
 .ep-sw{position:relative;width:36px;height:20px;flex-shrink:0}
@@ -184,6 +187,7 @@ body.panel-open #ed-panel{right:0}
 .ep-sw input:checked+.ep-sl::before{transform:translateX(16px)}
 .ep-reset{margin:0 14px 14px;width:calc(100% - 28px);padding:8px;background:var(--gris-bg);border:1px solid var(--gris-line);border-radius:6px;font-size:11px;font-weight:600;color:var(--gris-sub);cursor:pointer;font-family:var(--sans);letter-spacing:.04em;text-transform:uppercase}
 .ep-reset:hover{border-color:var(--naranja);color:var(--naranja)}
+.ep-plan-badge{display:inline-flex;align-items:center;gap:5px;background:var(--azul-claro);border:1px solid var(--azul-borde);border-radius:6px;padding:6px 10px;font-size:12px;font-weight:700;color:var(--marino);margin-bottom:10px;width:100%}
 
 @media print{
   #ed-toggle,#ed-panel{display:none !important}
@@ -221,19 +225,38 @@ body.panel-open #ed-panel{right:0}
     <button class="ep-btn ep-pdf" onclick="exportPDF()">🖨 PDF</button>
   </div>
   <div class="ep-body">
+
+    <div class="ep-grp">
+      <p class="ep-grp-t">📋 Plan seleccionado</p>
+      <div class="ep-f">
+        <label>Plan</label>
+        <select id="ep-plan-sel" onchange="applyPlan(this.value)">
+          <option value="1">Plan 1 — Agenda Express</option>
+          <option value="2" selected>Plan 2 — Recepción IA ★</option>
+          <option value="3">Plan 3 — Clínica 360</option>
+        </select>
+      </div>
+      <div class="ep-2col">
+        <div class="ep-f"><label>Setup ($)</label><input id="ep-setup" data-bind="setup" value="690"></div>
+        <div class="ep-f"><label>Mensual ($)</label><input id="ep-mensual" data-bind="mensual" value="149"></div>
+      </div>
+    </div>
+
     <div class="ep-grp">
       <p class="ep-grp-t">🏥 Encabezado</p>
       <div class="ep-f"><label>Título línea 1</label><input data-bind="titulo1" value="Su consultorio atendiendo"></div>
       <div class="ep-f"><label>Título línea 2 (cyan)</label><input data-bind="titulo2" value="pacientes las 24 horas"></div>
       <div class="ep-f"><label>Título línea 3</label><input data-bind="titulo3" value="sin que usted esté presente"></div>
     </div>
+
     <div class="ep-grp">
-      <p class="ep-grp-t">💰 Precios</p>
-      <div class="ep-f"><label>Setup único ($)</label><input data-bind="setup" value="690"></div>
-      <div class="ep-f"><label>Mensualidad ($)</label><input data-bind="mensual" value="149"></div>
-      <div class="ep-f"><label>Precio fundador ($)</label><input data-bind="fundador" value="483"></div>
-      <div class="ep-f"><label>Ahorro fundador ($)</label><input data-bind="ahorro" value="207"></div>
+      <p class="ep-grp-t">💰 Oferta fundador</p>
+      <div class="ep-2col">
+        <div class="ep-f"><label>Precio fundador ($)</label><input data-bind="fundador" value="483"></div>
+        <div class="ep-f"><label>Ahorro ($)</label><input data-bind="ahorro" value="207"></div>
+      </div>
     </div>
+
     <div class="ep-grp">
       <p class="ep-grp-t">📞 Contacto</p>
       <div class="ep-f"><label>WhatsApp (número intl.)</label><input data-bind="wa_num" value="593983031058"></div>
@@ -241,12 +264,14 @@ body.panel-open #ed-panel{right:0}
       <div class="ep-f"><label>Sitio web</label><input data-bind="web" value="consultoriodigital.net"></div>
       <div class="ep-f"><label>URL demo en vivo</label><input data-bind="demo" value="modo2.consultoriodigital.net"></div>
     </div>
+
     <div class="ep-grp">
       <p class="ep-grp-t">👁 Secciones</p>
       <div class="ep-sw-row"><span class="ep-sw-lbl">Oferta fundador</span><label class="ep-sw"><input type="checkbox" checked onchange="toggleSec('sec-oferta',this.checked)"><span class="ep-sl"></span></label></div>
       <div class="ep-sw-row"><span class="ep-sw-lbl">Tabla comparativa</span><label class="ep-sw"><input type="checkbox" checked onchange="toggleSec('sec-tabla',this.checked)"><span class="ep-sl"></span></label></div>
       <div class="ep-sw-row"><span class="ep-sw-lbl">¿Quién paga qué?</span><label class="ep-sw"><input type="checkbox" checked onchange="toggleSec('sec-herr',this.checked)"><span class="ep-sl"></span></label></div>
     </div>
+
   </div>
   <button class="ep-reset" onclick="resetAll()">↺ Restablecer valores</button>
 </div>
@@ -266,7 +291,7 @@ body.panel-open #ed-panel{right:0}
       </h1>
       <p class="header-desc">Propuesta personalizada · Agente de Recepción con Inteligencia Artificial para WhatsApp</p>
     </div>
-    </div>
+  </div>
   <div class="header-strip">
     <div class="strip-item"><div class="strip-dot"></div> Respuesta inmediata a pacientes</div>
     <div class="strip-item"><div class="strip-dot"></div> Agendamiento automático</div>
@@ -304,7 +329,7 @@ body.panel-open #ed-panel{right:0}
 
   <section class="section">
     <p class="section-label">Inversión</p>
-    <h2 class="section-title">Precios del Plan Recepción IA</h2>
+    <h2 class="section-title">Precios del <span id="plan-nombre-titulo">Plan Recepción IA</span></h2>
     <p class="section-intro">Estructura transparente — sabe exactamente qué paga y a quién.</p>
     <div class="precios-grid">
       <div class="precio-card">
@@ -431,24 +456,54 @@ body.panel-open #ed-panel{right:0}
 </footer>
 
 <script>
-const DEFS={setup:'690',mensual:'149',fundador:'483',ahorro:'207',wa_num:'593983031058',wa_vis:'098 303 1058',web:'consultoriodigital.net',demo:'modo2.consultoriodigital.net',titulo1:'Su consultorio atendiendo',titulo2:'pacientes las 24 horas',titulo3:'sin que usted esté presente'};
+const PLANS = {
+  '1': {nombre:'Agenda Express',    setup:'90',   mensual:'79',  fundador:'63',  ahorro:'27'},
+  '2': {nombre:'Recepción IA', setup:'690',  mensual:'149', fundador:'483', ahorro:'207'},
+  '3': {nombre:'Clínica 360',  setup:'1200', mensual:'249', fundador:'840', ahorro:'360'}
+};
+const DEFS={plan:'2',setup:'690',mensual:'149',fundador:'483',ahorro:'207',wa_num:'593983031058',wa_vis:'098 303 1058',web:'consultoriodigital.net',demo:'modo2.consultoriodigital.net',titulo1:'Su consultorio atendiendo',titulo2:'pacientes las 24 horas',titulo3:'sin que usted esté presente'};
+
 function togglePanel(){document.body.classList.toggle('panel-open')}
 function toggleSec(id,v){const el=document.getElementById(id);if(el)el.style.display=v?'':'none'}
+
 function applyField(k,v){
   document.querySelectorAll('[data-ed="'+k+'"]').forEach(el=>el.textContent=v);
   if(k==='wa_num'){const t=encodeURIComponent('Hola Rommel, me interesa la demo del sistema de recepción IA');document.getElementById('lnk-wa-btn').href='https://wa.me/'+v+'?text='+t;document.getElementById('lnk-wa').href='https://wa.me/'+v;}
   if(k==='web'){document.getElementById('lnk-web').href='https://'+v;}
   if(k==='demo'){document.getElementById('lnk-demo').href='https://'+v;document.getElementById('lnk-demo-btn').href='https://'+v;}
 }
+
+function applyPlan(pid){
+  const p = PLANS[pid];
+  if(!p) return;
+  // Actualizar título de sección
+  const nt = document.getElementById('plan-nombre-titulo');
+  if(nt) nt.textContent = p.nombre;
+  // Actualizar campos del panel
+  const fields = ['setup','mensual','fundador','ahorro'];
+  fields.forEach(k=>{
+    const inp = document.querySelector('#ed-panel [data-bind="'+k+'"]');
+    if(inp){inp.value=p[k];}
+    applyField(k, p[k]);
+  });
+}
+
+// Bind inputs del panel
 document.querySelectorAll('#ed-panel [data-bind]').forEach(inp=>{
   inp.addEventListener('input',()=>applyField(inp.dataset.bind,inp.value));
 });
+
 function resetAll(){
+  document.getElementById('ep-plan-sel').value='2';
+  applyPlan('2');
   document.querySelectorAll('#ed-panel [data-bind]').forEach(inp=>{
     const k=inp.dataset.bind;
     if(DEFS[k]!==undefined){inp.value=DEFS[k];applyField(k,DEFS[k]);}
   });
+  const nt=document.getElementById('plan-nombre-titulo');
+  if(nt) nt.textContent='Recepción IA';
 }
+
 function exportHTML(){
   const cl=document.documentElement.cloneNode(true);
   ['ed-toggle','ed-panel'].forEach(id=>{const e=cl.querySelector('#'+id);if(e)e.remove();});
